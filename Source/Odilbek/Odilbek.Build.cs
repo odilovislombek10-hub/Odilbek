@@ -16,7 +16,7 @@ public class Odilbek : ModuleRules
 		// Guarded so packaged (non-editor) builds are unaffected.
 		if (Target.bBuildEditor)
 		{
-			PrivateDependencyModuleNames.AddRange(new string[] { "UnrealEd", "UMGEditor", "Kismet", "AssetTools" });
+			PrivateDependencyModuleNames.AddRange(new string[] { "UnrealEd", "UMGEditor" });
 		}
 
 		// Uncomment if you are using Slate UI

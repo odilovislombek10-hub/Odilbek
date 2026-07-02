@@ -1,17 +1,20 @@
-// Editor-only commandlet that builds the BP_WeatherTime_Widget UMG tree.
-// Run headless (editor closed) with:
-//   UnrealEditor-Cmd.exe <Project.uproject> -run=WeatherTimeWidgetBuilder
+// Editor helper that builds the BP_WeatherTime_Widget UMG tree from C++.
+// UMG widget trees cannot be constructed from Python/automation (WidgetTree is
+// not script-exposed), so this native function does it. Invoke from the Editor:
+//   import unreal; unreal.OdilbekWidgetBuilderLibrary.build_weather_time_widget()
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Commandlets/Commandlet.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "WeatherTimeWidgetBuilderCommandlet.generated.h"
 
 UCLASS()
-class UWeatherTimeWidgetBuilderCommandlet : public UCommandlet
+class UOdilbekWidgetBuilderLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
 public:
-	virtual int32 Main(const FString& Params) override;
+	// Builds (or rebuilds) /Game/ArchVizExplorer/Blueprints/Widgets/BP_WeatherTime_Widget.
+	UFUNCTION(BlueprintCallable, Category = "Odilbek")
+	static void BuildWeatherTimeWidget();
 };

@@ -14,7 +14,6 @@
 #include "Components/Image.h"
 #include "Components/TextBlock.h"
 #include "Components/Slider.h"
-#include "Engine/Font.h"
 #include "Engine/Texture2D.h"
 #include "Styling/SlateColor.h"
 #include "Kismet2/BlueprintEditorUtils.h"
@@ -24,24 +23,23 @@
 
 DEFINE_LOG_CATEGORY_STATIC(LogWeatherTimeBuilder, Log, All);
 
-int32 UWeatherTimeWidgetBuilderCommandlet::Main(const FString& Params)
+void UOdilbekWidgetBuilderLibrary::BuildWeatherTimeWidget()
 {
 #if WITH_EDITOR
-	const FString AssetName = TEXT("BP_WeatherTime_Widget");
-	const FString ObjPath   = TEXT("/Game/ArchVizExplorer/Blueprints/Widgets/BP_WeatherTime_Widget.BP_WeatherTime_Widget");
+	const FString ObjPath = TEXT("/Game/ArchVizExplorer/Blueprints/Widgets/BP_WeatherTime_Widget.BP_WeatherTime_Widget");
 
 	UWidgetBlueprint* WBP = LoadObject<UWidgetBlueprint>(nullptr, *ObjPath);
 	if (!WBP)
 	{
 		UE_LOG(LogWeatherTimeBuilder, Error, TEXT("[WT] Could not load %s. Create the (empty) Widget Blueprint first."), *ObjPath);
-		return 1;
+		return;
 	}
 
 	UWidgetTree* Tree = WBP->WidgetTree;
 	if (!Tree)
 	{
 		UE_LOG(LogWeatherTimeBuilder, Error, TEXT("[WT] WidgetTree is null"));
-		return 1;
+		return;
 	}
 
 	// Fresh rebuild: drop any existing widgets.
@@ -84,9 +82,9 @@ int32 UWeatherTimeWidgetBuilderCommandlet::Main(const FString& Params)
 	UVerticalBox* VBox = Tree->ConstructWidget<UVerticalBox>(UVerticalBox::StaticClass(), TEXT("VBox_Main"));
 	BorderRoot->SetContent(VBox);
 
-	// --- Title ---
+	// --- Title: "POGODA | VREMYA SUTOK" in Cyrillic, written as \u escapes (ASCII-safe source) ---
 	UTextBlock* Title = Tree->ConstructWidget<UTextBlock>(UTextBlock::StaticClass(), TEXT("Text_Title"));
-	Title->SetText(FText::FromString(TEXT("ПОГОДА  |  ВРЕМЯ СУТОК")));
+	Title->SetText(FText::FromString(TEXT("\u041F\u041E\u0413\u041E\u0414\u0410  |  \u0412\u0420\u0415\u041C\u042F \u0421\u0423\u0422\u041E\u041A")));
 	Title->SetFont(FontTitle);
 	Title->SetColorAndOpacity(FSlateColor(White09));
 	if (UVerticalBoxSlot* TS = Cast<UVerticalBoxSlot>(VBox->AddChild(Title)))
@@ -111,7 +109,8 @@ int32 UWeatherTimeWidgetBuilderCommandlet::Main(const FString& Params)
 		return Btn;
 	};
 
-	UButton* BtnLeft = MakeTextButton(TEXT("Button_TimeLeft"), TEXT("◀"));
+	// Left/right triangle glyphs as \u escapes.
+	UButton* BtnLeft = MakeTextButton(TEXT("Button_TimeLeft"), TEXT("\u25C0"));
 	if (UHorizontalBoxSlot* S = Cast<UHorizontalBoxSlot>(TimeRow->AddChild(BtnLeft)))
 	{
 		S->SetPadding(FMargin(2));
@@ -130,7 +129,7 @@ int32 UWeatherTimeWidgetBuilderCommandlet::Main(const FString& Params)
 		S->SetVerticalAlignment(VAlign_Center);
 	}
 
-	UButton* BtnRight = MakeTextButton(TEXT("Button_TimeRight"), TEXT("▶"));
+	UButton* BtnRight = MakeTextButton(TEXT("Button_TimeRight"), TEXT("\u25B6"));
 	if (UHorizontalBoxSlot* S = Cast<UHorizontalBoxSlot>(TimeRow->AddChild(BtnRight)))
 	{
 		S->SetPadding(FMargin(2));
@@ -165,9 +164,7 @@ int32 UWeatherTimeWidgetBuilderCommandlet::Main(const FString& Params)
 		if (UTexture2D* Tex = LoadObject<UTexture2D>(nullptr, TexPath))
 		{
 			Img->SetBrushFromTexture(Tex, false);
-			FSlateBrush B = Img->GetBrush();
-			B.ImageSize = FVector2D(40.f, 40.f);
-			Img->SetBrush(B);
+			Img->SetDesiredSizeOverride(FVector2D(40.f, 40.f));
 		}
 		Img->SetColorAndOpacity(White09);
 		Btn->SetContent(Img);
@@ -228,9 +225,7 @@ int32 UWeatherTimeWidgetBuilderCommandlet::Main(const FString& Params)
 	UEditorLoadingAndSavingUtils::SavePackages(Packages, /*bOnlyDirty=*/false);
 
 	UE_LOG(LogWeatherTimeBuilder, Display, TEXT("[WT] BUILD DONE -> %s"), *ObjPath);
-	return 0;
 #else
-	UE_LOG(LogWeatherTimeBuilder, Error, TEXT("[WT] Editor-only commandlet."));
-	return 1;
+	UE_LOG(LogWeatherTimeBuilder, Error, TEXT("[WT] Editor-only function."));
 #endif
 }
