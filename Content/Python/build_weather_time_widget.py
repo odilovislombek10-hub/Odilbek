@@ -63,6 +63,52 @@ def get_or_create_bp():
     return bp
 
 
+def get_widget_tree(bp):
+    """WidgetTree is not reliably exposed on UWidgetBlueprint across engine
+    builds. Try several accessors and return the first UWidgetTree found."""
+    # 1) direct property (both name forms)
+    for nm in ("WidgetTree", "widget_tree"):
+        try:
+            t = bp.get_editor_property(nm)
+            if t:
+                log("tree via get_editor_property('%s')" % nm)
+                return t
+        except Exception:
+            pass
+    # 2) attribute access
+    for nm in ("widget_tree", "WidgetTree"):
+        t = getattr(bp, nm, None)
+        if t:
+            log("tree via attribute '%s'" % nm)
+            return t
+    # 3) via compiled generated-class CDO (UUserWidget exposes widget_tree)
+    try:
+        unreal.BlueprintEditorLibrary.compile_blueprint(bp)
+    except Exception as e:
+        log("precompile failed: %s" % e)
+    gc = None
+    for nm in ("generated_class", "GeneratedClass"):
+        try:
+            g = bp.get_editor_property(nm)
+            if g:
+                gc = g
+                break
+        except Exception:
+            pass
+    if gc is None:
+        gc = unreal.load_object(None, FULL_PATH + "_C")
+    if gc:
+        try:
+            cdo = unreal.get_default_object(gc)
+            t = cdo.get_editor_property("widget_tree")
+            if t:
+                log("tree via generated-class CDO widget_tree")
+                return t
+        except Exception as e:
+            log("CDO route failed: %s" % e)
+    return None
+
+
 def clear_tree(tree):
     root = tree.get_editor_property("root_widget")
     if root:
@@ -119,7 +165,11 @@ def fill_slot(slot, pad=4.0):
 
 def build():
     bp = get_or_create_bp()
-    tree = bp.get_editor_property("widget_tree")
+    tree = get_widget_tree(bp)
+    if tree is None:
+        raise Exception("Could not obtain WidgetTree by any method. "
+                        "dir(bp) tree-props: %s"
+                        % [d for d in dir(bp) if "tree" in d.lower()])
     clear_tree(tree)
 
     font_title = make_font(FONT_TITLE, 14)
