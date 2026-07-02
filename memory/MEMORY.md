@@ -6,3 +6,4 @@
 - [Pending fixes & MCP status](unreal_pending_fixes_and_mcp_status.md) — dedup/8K-downsize/mesh-optim all applied 2026-07-01 (unreal-mcp confirmed live), incl. what was deliberately skipped and why
 - [Wood material shading-model fix](unreal_wood_material_shading_model_fix.md) — Base_Material had ShadingModel=TwoSidedFoliage causing all Wood_*/Soil/avto materials to look washed-out white; fixed to DefaultLit 2026-07-02
 - [HISM mirrored-instance bug](unreal_hism_mirrored_instance_bug.md) — HISM_Object248 chairs: 12/24 instances had negative-determinant (mirrored) transforms causing shading differences; fixed by rewriting rotation to match siblings 2026-07-02
+- [Play error: RT + streaming pool fix](unreal_play_error_rt_streaming_fix.md) — 2026-07-02 Play errors: DeviceProfiles.ini RT.Shadows/Skylight conflict fixed + 99 Planerovka textures NeverStream=true fixed live via MCP (verified, 99/99 success)
