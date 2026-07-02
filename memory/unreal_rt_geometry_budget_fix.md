@@ -1,0 +1,18 @@
+---
+name: unreal-rt-geometry-budget-fix
+description: "Root cause of persistent RT Geometry \"Always Resident\"/\"Over Budget\" Play errors — fix was applied to engine install ini, then correctly reverted, but never migrated to project ini"
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: 5b966071-9d9e-41d6-8de1-ca015f15078a
+---
+
+On 2026-07-02 the "RAY TRACING GEOMETRY - ALWAYS RESIDENT MEMORY EXCEEDS 20% OF THE BUDGET" and "REQUESTED MEMORY OVER BUDGET (X GiB / 400 MiB)" red/yellow on-screen errors kept reappearing on Play even after being "fixed."
+
+Root cause: an earlier session applied `r.RayTracing.NumAlwaysResidentLODs=0` and `r.RayTracing.ResidentGeometryMemoryPoolSizeInMB=2200` to the **engine install's own global** `C:\Program Files\Epic Games\UE_5.8\Engine\Config\ConsoleVariables.ini` (affects every project on that engine install — bad practice). That session then correctly reverted/cleaned the engine-level file back to stock (good), but the equivalent cvars were never added to the project's own `Config/DefaultEngine.ini`. Net result: the fix existed nowhere, so defaults (LOD0 always resident=1, 400 MiB pool) kept triggering the warning. This is the opposite of what the user suspected (that UE 5.8's base ini overrides project ini) — in reality project ini has higher priority than engine Base ini; the real bug was the fix being deleted from the only place it existed.
+
+Fix applied 2026-07-02: added `r.RayTracing.NumAlwaysResidentLODs=0` and `r.RayTracing.ResidentGeometryMemoryPoolSizeInMB=3072` to `Config/DefaultEngine.ini` under `[/Script/Engine.RendererSettings]`, right after the existing `r.RayTracing.Culling.*` lines (~line 82-85). Verified via unreal-mcp `SearchCVars` that live editor still had the old defaults (1 / 400) since these RendererSettings cvars are only applied via `ApplyCVarSettingsFromIni` at engine startup — **a full Editor restart is required**, hot-reload/console won't pick it up. unreal-mcp currently has no cvar-set tool (`SearchCVars` is read-only), so this can't be verified live without restarting.
+
+**Why:** ~2.1-2.2 GiB of ray tracing geometry is actually needed by this scene's meshes; UE's default 400 MiB pool + LOD0-always-resident policy is far too small for an ArchViz scene this size.
+
+**How to apply:** Never edit `Engine/Config/*.ini` inside the Epic Games engine install directory for project-specific fixes — always put render/streaming cvar overrides in the project's own `Config/DefaultEngine.ini` (or `DefaultDeviceProfiles.ini`/`DefaultConsoleVariables.ini`). If a fix still doesn't take effect after an ini edit, check for a *removed but not re-migrated* engine-level override before assuming project ini isn't taking priority. See [[unreal_pending_fixes_and_mcp_status]] and [[unreal_full_audit_2026_07_02]] for prior related fixes, and [[unreal_play_error_rt_streaming_fix]] for the earlier round of this same class of Play-error.
