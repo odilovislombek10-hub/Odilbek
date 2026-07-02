@@ -6,7 +6,10 @@ Intermediate/
 Saved/
 
 # Content assets (binary .uasset/.umap) - not tracked, code/config only
-Content/
+Content/*
+# ...except reusable Python tooling (audit/optimization scripts) - track these
+!Content/Python/
+Content/Python/__pycache__/
 
 # Plugin binary/generated folders (keep plugin Source/Config/.uplugin)
 Plugins/*/Binaries/
