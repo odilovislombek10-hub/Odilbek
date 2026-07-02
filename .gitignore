@@ -27,6 +27,9 @@ cesium-request-cache.sqlite
 cesium-request-cache.sqlite-shm
 cesium-request-cache.sqlite-wal
 
+# Local monitor state/logs
+logs/
+
 # OS files
 Thumbs.db
 .DS_Store
