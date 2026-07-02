@@ -18,6 +18,13 @@ metadata:
 - Do it as ONE **universal material** (a shared master with weather params driven globally) — optimized, not per-asset hand-editing.
 - User-identified target materials so far: **`M_Asphalt_base_Inst1`** = asphalt, **`M_Grass`** = lawn/gazon. (More surfaces — walls — to be enumerated.)
 
+**VERTICAL vs HORIZONTAL surface handling (user explicitly confirmed this 2026-07-03, discussed earlier in session `8e9840ef` 18:48):** the effect must be driven by **world-space surface normal**, not applied uniformly:
+- **Horizontal / up-facing surfaces** (normal Z ≈ +1: ground, roads, plaza, sidewalks, roofs, horizontal ledges) → **snow accumulates** here (top-down snow mask) AND **rain puddles pool** here. Strongest visual.
+- **Vertical surfaces** (walls / `DEVOR`, normal Z ≈ 0) → snow barely accumulates, but **wetness/darkening + downward streaks** apply. User DID ask walls to respond too ("DEVOR TEXTURALARIDAHAM SHUNDAY").
+- This world-normal masking is exactly what UDS's **`Surface_Weather_Effects`** material function does.
+
+**Key assets found (session `8e9840ef`):** UDS surface function = **`Surface_Weather_Effects`** (603 nodes, 44 inputs — heavy). Most project materials derive from one **`Base_Material`** (`/Game/Mavrid/Default_M/Base_Material`, see [[unreal_wood_material_shading_model_fix]]) → cleanest to add the function ONCE to that master so instances inherit. **CRASH CAUSE identified:** adding this heavy 603-node function to MANY materials = many recompiles = the Lumen HWRT GPU crash. Mitigation: add to ONE master (or a few key ground materials) not per-asset; compile+save incrementally.
+
 **Approach notes (not yet started):** UDS ships a global weather-wetness/snow system — typical integration is a Material Parameter Collection (MPC) or global scalar/vector params (`Wetness`, `Snow Amount`) that UltraDynamicWeather writes each frame, which surface master materials read to blend a wet/snow layer (world-space up-vector mask for snow, puddle mask from a noise/heightmap for water, panner-driven ripple normal for rain impacts). Check UDS docs/blueprints for the exact MPC/param names it already exposes (`/Game/UltraDynamicSky/...`) BEFORE authoring a new material — UDS likely already has "Post Process Materials" / "Wetness" hooks (`Ultra_Dynamic_Weather` has wetness & snow settings). **CAUTION: this crashed Unreal on first attempt — start small (one material, e.g. M_Asphalt_base_Inst1), save often, watch for the Lumen HWRT async GPU crash [[unreal_gpu_crash_lumen_hwrt_pagefault]].**
 
 See [[unreal_uds_weather_panel_progress]], [[unreal_wood_material_shading_model_fix]], [[feedback_respond_in_uzbek]].
