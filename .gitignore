@@ -14,7 +14,7 @@ Plugins/*/Intermediate/
 Plugins/*/Content/
 
 # Prebuilt third-party static libraries (too large for GitHub, no LFS configured)
-Plugins/*/Source/ThirdParty/*/lib/
+Plugins/*/Source/ThirdParty/lib/
 
 # Visual Studio / IDE
 .vs/
