@@ -16,9 +16,9 @@
           {
             "type": "command",
             "shell": "powershell",
-            "command": "powershell -NoProfile -File \"D:\\mirmironnnn oxirgiiii\\Unreal Engine\\Unreal Engine\\Muslimatun\\scripts\\auto_commit_push.ps1\"",
-            "timeout": 60,
-            "statusMessage": "Auto-pushing session notes to GitHub..."
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"D:\\mirmironnnn oxirgiiii\\Unreal Engine\\Unreal Engine\\Muslimatun\\scripts\\auto_commit_push.ps1\"; powershell -NoProfile -ExecutionPolicy Bypass -File \"D:\\mirmironnnn oxirgiiii\\Unreal Engine\\Unreal Engine\\Odilbek\\scripts\\auto_commit_push.ps1\"",
+            "timeout": 90,
+            "statusMessage": "Auto-pushing session notes to GitHub (Muslimatun + Odilbek)..."
           }
         ]
       }
