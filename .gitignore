@@ -1,0 +1,32 @@
+# Unreal Engine generated/build folders
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Content assets (binary .uasset/.umap) - not tracked, code/config only
+Content/
+
+# Plugin binary/generated folders (keep plugin Source/Config/.uplugin)
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+Plugins/*/Content/
+
+# Prebuilt third-party static libraries (too large for GitHub, no LFS configured)
+Plugins/*/Source/ThirdParty/*/lib/
+
+# Visual Studio / IDE
+.vs/
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+
+# Cesium plugin runtime cache (large, regenerated locally)
+cesium-request-cache.sqlite
+cesium-request-cache.sqlite-shm
+cesium-request-cache.sqlite-wal
+
+# OS files
+Thumbs.db
+.DS_Store

@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__unreal-mcp__call_tool",
+      "Bash(mkdir -p \"D:/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/Muslimatun\")",
+      "Read(//d/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/**)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "unreal-mcp"
+  ],
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "powershell -NoProfile -File \"D:\\mirmironnnn oxirgiiii\\Unreal Engine\\Unreal Engine\\Muslimatun\\scripts\\auto_commit_push.ps1\"",
+            "timeout": 60,
+            "statusMessage": "Auto-pushing session notes to GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}
