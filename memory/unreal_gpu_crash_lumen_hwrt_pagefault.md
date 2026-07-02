@@ -16,8 +16,10 @@ metadata:
 
 **Why:** engine is actually **UE 5.8** (`C:\Program Files\Epic Games\UE_5.8\`), config comments say 5.5 — mismatch, not the cause. `r.GPUCrashDebugging=0` meant DRED had no breadcrumb, but Aftermath still pinpointed HWRT.
 
-**Fix applied to project Config/DefaultEngine.ini (2026-07-02):**
-- `r.Lumen.HardwareRayTracing.Async=0` — forces HWRT onto the graphics queue, kills the async-compute page-fault race. Minimal quality cost. Added in Lumen section.
+**⚠️ CORRECTION 2026-07-03 (session c33362b2): the cvar `r.Lumen.HardwareRayTracing.Async` DOES NOT EXIST in UE5.8 — verified via EditorAppToolset.SearchCVars (searched "Lumen.HardwareRayTracing", full list returned, no `.Async` entry). So the 2026-07-02 "fix" was a silent NO-OP and the crash was never actually mitigated (hence the 2026-07-03 23:51 recurrence). THE REAL CVAR = `r.Lumen.DiffuseIndirect.AsyncCompute` (was =1 live). Set `r.Lumen.DiffuseIndirect.AsyncCompute=0` in DefaultEngine.ini (replaced the bogus line). This forces Lumen diffuse-indirect GI passes off the async-compute pipe onto graphics, killing the LumenSceneLighting/LumenScreenProbeGather async page-fault race. NEEDS EDITOR RESTART — until then the live session still has AsyncCompute=1 and remains crash-prone. To check any cvar live: EditorAppToolset.SearchCVars(name substring) returns {name:{help,value}}.**
+
+**Fix applied to project Config/DefaultEngine.ini (2026-07-02, superseded — see correction above):**
+- ~~`r.Lumen.HardwareRayTracing.Async=0`~~ — BOGUS cvar, no-op in UE5.8.
 - `r.GPUCrashDebugging=1` — added near top so next crash gives exact resource breadcrumb.
 - Also removed deprecated `r.Mobile.VirtualTextures=True` (was firing a separate handled Ensure; crash folder 63B853... — that Ensure is NOT the GPU crash).
 

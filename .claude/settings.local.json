@@ -5,7 +5,9 @@
       "Bash(mkdir -p \"D:/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/Muslimatun\")",
       "Read(//d/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/**)",
       "mcp__unreal-mcp__describe_toolset",
-      "mcp__unreal-mcp__list_toolsets"
+      "mcp__unreal-mcp__list_toolsets",
+      "WebFetch(domain:www.filmmakersacademy.com)",
+      "WebFetch(domain:irendering.net)"
     ]
   },
   "enabledMcpjsonServers": [
