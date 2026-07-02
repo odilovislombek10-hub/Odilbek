@@ -1,0 +1,556 @@
+﻿[
+    {
+        "map":  "Glavniy_MirMIron",
+        "actor_count":  3440,
+        "class_counts":  [
+                             {
+                                 "Name":  "StaticMeshActor",
+                                 "Count":  1176
+                             },
+                             {
+                                 "Name":  "SpotLight",
+                                 "Count":  1145
+                             },
+                             {
+                                 "Name":  "BP_POI_C",
+                                 "Count":  518
+                             },
+                             {
+                                 "Name":  "RectLight",
+                                 "Count":  292
+                             },
+                             {
+                                 "Name":  "PointLight",
+                                 "Count":  73
+                             },
+                             {
+                                 "Name":  "BP_NVSplineMesh_C",
+                                 "Count":  64
+                             },
+                             {
+                                 "Name":  "GroupActor",
+                                 "Count":  59
+                             },
+                             {
+                                 "Name":  "DecalActor",
+                                 "Count":  35
+                             },
+                             {
+                                 "Name":  "NewBlueprint_C",
+                                 "Count":  25
+                             },
+                             {
+                                 "Name":  "Cobalt_C",
+                                 "Count":  6
+                             },
+                             {
+                                 "Name":  "Nexia_3_C",
+                                 "Count":  5
+                             },
+                             {
+                                 "Name":  "Gentra_C",
+                                 "Count":  5
+                             },
+                             {
+                                 "Name":  "BP_Car3_C",
+                                 "Count":  4
+                             },
+                             {
+                                 "Name":  "BP_Car4_C",
+                                 "Count":  3
+                             },
+                             {
+                                 "Name":  "Kia_Sorento_Body_C",
+                                 "Count":  3
+                             }
+                         ],
+        "light_count":  1512,
+        "light_stats_by_class":  [
+                                     {
+                                         "class":  "SkyLightComponent",
+                                         "count":  1,
+                                         "min_intensity":  1.6000000238418579,
+                                         "max_intensity":  1.6000000238418579,
+                                         "avg_intensity":  1.6
+                                     },
+                                     {
+                                         "class":  "DirectionalLightComponent",
+                                         "count":  1,
+                                         "min_intensity":  7,
+                                         "max_intensity":  7,
+                                         "avg_intensity":  7
+                                     },
+                                     {
+                                         "class":  "SpotLightComponent",
+                                         "count":  1145,
+                                         "min_intensity":  0.5,
+                                         "max_intensity":  100,
+                                         "avg_intensity":  18.59
+                                     },
+                                     {
+                                         "class":  "RectLightComponent",
+                                         "count":  292,
+                                         "min_intensity":  0.800000011920929,
+                                         "max_intensity":  20,
+                                         "avg_intensity":  0.94
+                                     },
+                                     {
+                                         "class":  "PointLightComponent",
+                                         "count":  73,
+                                         "min_intensity":  4,
+                                         "max_intensity":  4,
+                                         "avg_intensity":  4
+                                     }
+                                 ],
+        "no_material_mesh_count":  0,
+        "no_material_examples":  {
+
+                                 },
+        "heavy_mesh_usage":  {
+                                 "leaf":  2,
+                                 "door039":  1,
+                                 "Ash-tree_05":  9,
+                                 "Plane126":  1,
+                                 "BlockV360":  1,
+                                 "wicker":  14,
+                                 "3dSolid7716":  1,
+                                 "Cube_053":  4,
+                                 "zont_1_011":  4,
+                                 "Pond":  1,
+                                 "rack_012":  1
+                             },
+        "top_meshes":  [
+                           {
+                               "mesh":  "/Engine/BasicShapes/Cube.Cube",
+                               "count":  522
+                           },
+                           {
+                               "mesh":  "/Engine/EditorMeshes/Camera/SM_CineCam.SM_CineCam",
+                               "count":  519
+                           },
+                           {
+                               "mesh":  "/Game/Level/Export/Plane007.Plane007",
+                               "count":  203
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/crp_РЎРїРёСЂРµСЏ_РіРѕР»РґРµРЅ_РїСЂРёРЅС†РµСЃСЃ001.crp_РЎРїРёСЂРµСЏ_РіРѕР»РґРµРЅ_РїСЂРёРЅС†РµСЃСЃ001",
+                               "count":  126
+                           },
+                           {
+                               "mesh":  "/Game/Level/Export/Object1834019033.Object1834019033",
+                               "count":  78
+                           },
+                           {
+                               "mesh":  "/Game/Level/Export/Cylinder001.Cylinder001",
+                               "count":  78
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/Libertia_Grandiflora01_009.Libertia_Grandiflora01_009",
+                               "count":  69
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/Pinus_Mugo_0403_.Pinus_Mugo_0403_",
+                               "count":  50
+                           },
+                           {
+                               "mesh":  "/Game/Speed_tree/Cornus_sanguinea/Cornus_sanguinea.Cornus_sanguinea",
+                               "count":  50
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/crp_РџСѓР·С‹СЂРµРїР»РѕРґРЅРёРє_Р·РµР»РµРЅС‹Р№_01.crp_РџСѓР·С‹СЂРµРїР»РѕРґРЅРёРє_Р·РµР»РµРЅС‹Р№_01",
+                               "count":  48
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/Object1834013890.Object1834013890",
+                               "count":  48
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/metal1.metal1",
+                               "count":  48
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/Libertia_Grandiflora01_010.Libertia_Grandiflora01_010",
+                               "count":  35
+                           },
+                           {
+                               "mesh":  "/Game/Speed_tree/Dub/dub_4m_03.dub_4m_03",
+                               "count":  30
+                           },
+                           {
+                               "mesh":  "/Game/Mavrid/FBX_Exporter/Tuvak_gullar/Collection_Indoor_outdoor_plant_163_concrete_dirt_vase_pot_palm_cactus/POT_25092019_2.POT_25092019_2",
+                               "count":  28
+                           }
+                       ],
+        "distinct_mesh_count":  501
+    },
+    {
+        "map":  "Pragulka",
+        "actor_count":  3973,
+        "class_counts":  [
+                             {
+                                 "Name":  "StaticMeshActor",
+                                 "Count":  1804
+                             },
+                             {
+                                 "Name":  "SpotLight",
+                                 "Count":  1149
+                             },
+                             {
+                                 "Name":  "GroupActor",
+                                 "Count":  340
+                             },
+                             {
+                                 "Name":  "RectLight",
+                                 "Count":  292
+                             },
+                             {
+                                 "Name":  "BP_NVSplineMesh_C",
+                                 "Count":  141
+                             },
+                             {
+                                 "Name":  "PointLight",
+                                 "Count":  78
+                             },
+                             {
+                                 "Name":  "DecalActor",
+                                 "Count":  35
+                             },
+                             {
+                                 "Name":  "NewBlueprint_C",
+                                 "Count":  31
+                             },
+                             {
+                                 "Name":  "NewBlueprint1_C",
+                                 "Count":  13
+                             },
+                             {
+                                 "Name":  "Gentra_C",
+                                 "Count":  11
+                             },
+                             {
+                                 "Name":  "TriggerBox",
+                                 "Count":  10
+                             },
+                             {
+                                 "Name":  "Cobalt_C",
+                                 "Count":  10
+                             },
+                             {
+                                 "Name":  "Nexia_3_C",
+                                 "Count":  7
+                             },
+                             {
+                                 "Name":  "Nalibu_2_C",
+                                 "Count":  6
+                             },
+                             {
+                                 "Name":  "Spark_C",
+                                 "Count":  6
+                             }
+                         ],
+        "light_count":  1521,
+        "light_stats_by_class":  [
+                                     {
+                                         "class":  "SkyLightComponent",
+                                         "count":  1,
+                                         "min_intensity":  1.6000000238418579,
+                                         "max_intensity":  1.6000000238418579,
+                                         "avg_intensity":  1.6
+                                     },
+                                     {
+                                         "class":  "DirectionalLightComponent",
+                                         "count":  1,
+                                         "min_intensity":  7,
+                                         "max_intensity":  7,
+                                         "avg_intensity":  7
+                                     },
+                                     {
+                                         "class":  "SpotLightComponent",
+                                         "count":  1149,
+                                         "min_intensity":  0.5,
+                                         "max_intensity":  222.25930786132813,
+                                         "avg_intensity":  41.44
+                                     },
+                                     {
+                                         "class":  "RectLightComponent",
+                                         "count":  292,
+                                         "min_intensity":  0.800000011920929,
+                                         "max_intensity":  11,
+                                         "avg_intensity":  0.91
+                                     },
+                                     {
+                                         "class":  "PointLightComponent",
+                                         "count":  78,
+                                         "min_intensity":  4,
+                                         "max_intensity":  4,
+                                         "avg_intensity":  4
+                                     }
+                                 ],
+        "no_material_mesh_count":  0,
+        "no_material_examples":  {
+
+                                 },
+        "heavy_mesh_usage":  {
+                                 "Shape389":  4,
+                                 "zont_1_011":  12,
+                                 "Cube_053":  4,
+                                 "Pond":  1,
+                                 "BlockV360":  1,
+                                 "3dSolid7716":  1,
+                                 "leaf":  1,
+                                 "wicker":  28,
+                                 "rack_012":  1,
+                                 "door039":  1,
+                                 "Ash-tree_05":  7,
+                                 "Plane126":  1
+                             },
+        "top_meshes":  [
+                           {
+                               "mesh":  "/Game/Level/Export/Plane007.Plane007",
+                               "count":  203
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/crp_РЎРїРёСЂРµСЏ_РіРѕР»РґРµРЅ_РїСЂРёРЅС†РµСЃСЃ001.crp_РЎРїРёСЂРµСЏ_РіРѕР»РґРµРЅ_РїСЂРёРЅС†РµСЃСЃ001",
+                               "count":  168
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/Libertia_Grandiflora01_009.Libertia_Grandiflora01_009",
+                               "count":  154
+                           },
+                           {
+                               "mesh":  "/Engine/BasicShapes/Cube.Cube",
+                               "count":  133
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/Object1834013890.Object1834013890",
+                               "count":  91
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/Libertia_Grandiflora01_010.Libertia_Grandiflora01_010",
+                               "count":  80
+                           },
+                           {
+                               "mesh":  "/Game/Level/Export/Object1834019033.Object1834019033",
+                               "count":  78
+                           },
+                           {
+                               "mesh":  "/Game/Level/Export/Cylinder001.Cylinder001",
+                               "count":  78
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/crp_РџСѓР·С‹СЂРµРїР»РѕРґРЅРёРє_Р·РµР»РµРЅС‹Р№_01.crp_РџСѓР·С‹СЂРµРїР»РѕРґРЅРёРє_Р·РµР»РµРЅС‹Р№_01",
+                               "count":  78
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/Object248.Object248",
+                               "count":  72
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/manutti_cross_cloth002.manutti_cross_cloth002",
+                               "count":  64
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/metal.metal",
+                               "count":  64
+                           },
+                           {
+                               "mesh":  "/Game/Speed_tree/Cornus_sanguinea/Cornus_sanguinea.Cornus_sanguinea",
+                               "count":  60
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/Pinus_Mugo_0403_.Pinus_Mugo_0403_",
+                               "count":  60
+                           },
+                           {
+                               "mesh":  "/Game/Level/Quyosh_Batariykasi3.Quyosh_Batariykasi3",
+                               "count":  55
+                           }
+                       ],
+        "distinct_mesh_count":  373
+    },
+    {
+        "map":  "VR",
+        "actor_count":  3610,
+        "class_counts":  [
+                             {
+                                 "Name":  "StaticMeshActor",
+                                 "Count":  1485
+                             },
+                             {
+                                 "Name":  "SpotLight",
+                                 "Count":  1147
+                             },
+                             {
+                                 "Name":  "GroupActor",
+                                 "Count":  332
+                             },
+                             {
+                                 "Name":  "RectLight",
+                                 "Count":  292
+                             },
+                             {
+                                 "Name":  "BP_NVSplineMesh_C",
+                                 "Count":  105
+                             },
+                             {
+                                 "Name":  "PointLight",
+                                 "Count":  78
+                             },
+                             {
+                                 "Name":  "DecalActor",
+                                 "Count":  35
+                             },
+                             {
+                                 "Name":  "NewBlueprint_C",
+                                 "Count":  30
+                             },
+                             {
+                                 "Name":  "BP_POI_C",
+                                 "Count":  21
+                             },
+                             {
+                                 "Name":  "TriggerBox",
+                                 "Count":  10
+                             },
+                             {
+                                 "Name":  "Gentra_C",
+                                 "Count":  8
+                             },
+                             {
+                                 "Name":  "Cobalt_C",
+                                 "Count":  8
+                             },
+                             {
+                                 "Name":  "Nexia_3_C",
+                                 "Count":  6
+                             },
+                             {
+                                 "Name":  "NewBlueprint1_C",
+                                 "Count":  6
+                             },
+                             {
+                                 "Name":  "Kia_5_C",
+                                 "Count":  6
+                             }
+                         ],
+        "light_count":  1519,
+        "light_stats_by_class":  [
+                                     {
+                                         "class":  "SkyLightComponent",
+                                         "count":  1,
+                                         "min_intensity":  1.6000000238418579,
+                                         "max_intensity":  1.6000000238418579,
+                                         "avg_intensity":  1.6
+                                     },
+                                     {
+                                         "class":  "DirectionalLightComponent",
+                                         "count":  1,
+                                         "min_intensity":  7,
+                                         "max_intensity":  7,
+                                         "avg_intensity":  7
+                                     },
+                                     {
+                                         "class":  "SpotLightComponent",
+                                         "count":  1147,
+                                         "min_intensity":  0.5,
+                                         "max_intensity":  222.25930786132813,
+                                         "avg_intensity":  41.12
+                                     },
+                                     {
+                                         "class":  "RectLightComponent",
+                                         "count":  292,
+                                         "min_intensity":  0.800000011920929,
+                                         "max_intensity":  11,
+                                         "avg_intensity":  0.91
+                                     },
+                                     {
+                                         "class":  "PointLightComponent",
+                                         "count":  78,
+                                         "min_intensity":  4,
+                                         "max_intensity":  4,
+                                         "avg_intensity":  4
+                                     }
+                                 ],
+        "no_material_mesh_count":  0,
+        "no_material_examples":  {
+
+                                 },
+        "heavy_mesh_usage":  {
+                                 "Shape389":  4,
+                                 "zont_1_011":  8,
+                                 "Cube_053":  4,
+                                 "Pond":  1,
+                                 "BlockV360":  1,
+                                 "3dSolid7716":  1,
+                                 "leaf":  1,
+                                 "wicker":  20,
+                                 "rack_012":  1,
+                                 "door039":  1,
+                                 "Ash-tree_05":  7,
+                                 "Plane126":  1
+                             },
+        "top_meshes":  [
+                           {
+                               "mesh":  "/Game/Level/Export/Plane007.Plane007",
+                               "count":  201
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/crp_РЎРїРёСЂРµСЏ_РіРѕР»РґРµРЅ_РїСЂРёРЅС†РµСЃСЃ001.crp_РЎРїРёСЂРµСЏ_РіРѕР»РґРµРЅ_РїСЂРёРЅС†РµСЃСЃ001",
+                               "count":  158
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/Libertia_Grandiflora01_009.Libertia_Grandiflora01_009",
+                               "count":  116
+                           },
+                           {
+                               "mesh":  "/Game/Level/Export/Object1834019033.Object1834019033",
+                               "count":  78
+                           },
+                           {
+                               "mesh":  "/Game/Level/Export/Cylinder001.Cylinder001",
+                               "count":  78
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/crp_РџСѓР·С‹СЂРµРїР»РѕРґРЅРёРє_Р·РµР»РµРЅС‹Р№_01.crp_РџСѓР·С‹СЂРµРїР»РѕРґРЅРёРє_Р·РµР»РµРЅС‹Р№_01",
+                               "count":  70
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/Object1834013890.Object1834013890",
+                               "count":  68
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/Pinus_Mugo_0403_.Pinus_Mugo_0403_",
+                               "count":  59
+                           },
+                           {
+                               "mesh":  "/Game/Speed_tree/Cornus_sanguinea/Cornus_sanguinea.Cornus_sanguinea",
+                               "count":  59
+                           },
+                           {
+                               "mesh":  "/Game/Level/Quyosh_Batariykasi3.Quyosh_Batariykasi3",
+                               "count":  55
+                           },
+                           {
+                               "mesh":  "/Game/Statik_tree/Kustarnik/Libertia_Grandiflora01_010.Libertia_Grandiflora01_010",
+                               "count":  53
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/Object248.Object248",
+                               "count":  48
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/metal1.metal1",
+                               "count":  48
+                           },
+                           {
+                               "mesh":  "/Engine/BasicShapes/Cube.Cube",
+                               "count":  40
+                           },
+                           {
+                               "mesh":  "/Game/BlankDefault/Model/MWLW_TGWPADL_001.MWLW_TGWPADL_001",
+                               "count":  36
+                           }
+                       ],
+        "distinct_mesh_count":  374
+    }
+]

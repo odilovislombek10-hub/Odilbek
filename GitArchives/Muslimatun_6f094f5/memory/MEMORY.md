@@ -1,0 +1,7 @@
+- [Project overview](unreal_project_overview.md) — Odilbek UE ArchViz project: engine/plugins, full Content folder map & sizes
+- [Project levels](unreal_project_levels.md) — exact .umap paths for Glavniy_MirMIron/Pragulka/VR + full level inventory, BuiltData/baked-lighting status
+- [ArchVizExplorer structure](unreal_archvizexplorer_structure.md) — the core blueprint/widget framework (BP_Explorer_*, BP_*_Widget, materials, meshes)
+- [Audit Python script](unreal_audit_python_script.md) — how to run Content/Python/audit_level_export.py for exact Details-panel parameter dumps
+- [Perf/texture audit](unreal_perf_texture_audit.md) — duplicate textures, 8K oversized textures, streaming pool config bug (8GB vs intended 12GB), why Glavniy_MirMIron/Pragulka/VR are heavy (mesh geometry, not textures)
+- [Pending fixes & MCP status](unreal_pending_fixes_and_mcp_status.md) — dedup/8K-downsize/mesh-optim all applied 2026-07-01 (unreal-mcp confirmed live), incl. what was deliberately skipped and why
+- [Wood material shading-model fix](unreal_wood_material_shading_model_fix.md) — Base_Material had ShadingModel=TwoSidedFoliage causing all Wood_*/Soil/avto materials to look washed-out white; fixed to DefaultLit 2026-07-02
