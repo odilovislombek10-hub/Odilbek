@@ -3,7 +3,8 @@
     "allow": [
       "mcp__unreal-mcp__call_tool",
       "Bash(mkdir -p \"D:/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/Muslimatun\")",
-      "Read(//d/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/**)"
+      "Read(//d/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/**)",
+      "mcp__unreal-mcp__describe_toolset"
     ]
   },
   "enabledMcpjsonServers": [
@@ -15,8 +16,8 @@
         "hooks": [
           {
             "type": "command",
-            "shell": "powershell",
             "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"D:\\mirmironnnn oxirgiiii\\Unreal Engine\\Unreal Engine\\Muslimatun\\scripts\\auto_commit_push.ps1\"; powershell -NoProfile -ExecutionPolicy Bypass -File \"D:\\mirmironnnn oxirgiiii\\Unreal Engine\\Unreal Engine\\Odilbek\\scripts\\auto_commit_push.ps1\"",
+            "shell": "powershell",
             "timeout": 90,
             "statusMessage": "Auto-pushing session notes to GitHub (Muslimatun + Odilbek)..."
           }
