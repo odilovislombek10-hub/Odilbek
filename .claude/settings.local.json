@@ -16,7 +16,9 @@
       "Read(//c/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/**)",
       "Bash(git -C \"D:/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/Odilbek\" remote -v)",
       "Bash(git -C \"D:/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/Odilbek\" config user.name)",
-      "Bash(git -C \"D:/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/Odilbek\" config user.email)"
+      "Bash(git -C \"D:/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/Odilbek\" config user.email)",
+      "Read(//e/MIR MIRON PACKAGE/Windows/**)",
+      "WebFetch(domain:forums.unrealengine.com)"
     ]
   },
   "enabledMcpjsonServers": [
