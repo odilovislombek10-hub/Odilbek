@@ -12,7 +12,7 @@ bDeviceProfileOverride=False   ; ⚡ Unreal faqat birinchi ishga tushganda qo‘
 
 CVars=r.DefaultFeature.Bloom=1
 CVars=r.DefaultFeature.AntiAliasing=2
-CVars=r.AntiAliasingMethod=2
+CVars=r.AntiAliasingMethod=4
 CVars=r.DefaultFeature.MotionBlur=0
 CVars=r.DefaultFeature.AmbientOcclusion=1
 CVars=r.DefaultFeature.AutoExposure.ExtendDefaultLuminanceRange=True
@@ -22,32 +22,31 @@ CVars=r.Lumen.Reflections.HardwareRayTracing=1
 CVars=r.Lumen.Reflections.ScreenTraces=1
 CVars=r.Lumen.DiffuseIndirect=1
 CVars=r.Lumen.Reflections.MaxRoughness=1
-CVars=r.LumenSceneDetail=1
-CVars=r.LumenSceneLightingQuality=1
-CVars=r.LumenSceneViewDistance=20000
+CVars=r.LumenSceneDetail=4
+CVars=r.LumenSceneLightingQuality=4
+CVars=r.LumenSceneViewDistance=40000
 CVars=r.Shadow.Virtual.Enable=1
 CVars=r.Shadow.Virtual.OnePassProjection.MaxLightsPerPixel=32
-CVars=r.Shadow.Virtual.MaxPhysicalPages=8192
+CVars=r.Shadow.Virtual.MaxPhysicalPages=16384
 CVars=r.Shadow.CSM.MaxCascades=4
-CVars=r.Shadow.MaxResolution=2048
+CVars=r.Shadow.MaxResolution=4096
 CVars=r.SSGI.Quality=4
-CVars=r.SSR.Quality=4
+CVars=r.SSR.Quality=3
 CVars=r.SSR.Temporal=1
-CVars=r.TemporalAA.Upsampling=1
+CVars=r.TemporalAA.Upsampling=0
 CVars=r.ViewDistanceScale=1.0
 CVars=r.SkeletalMeshLODBias=0
 CVars=r.StaticMeshLODDistanceScale=1.0
-CVars=r.Streaming.PoolSize=12288  ; ⚡ 8192->12288: 24GB VRAM uchun to'g'ri 12GB pool (Engine.ini bilan mos, oldingi 8GB nomuvofiqlik tuzatildi)
-; ⚡ GPU crash fix (device profile runtime'da ustun kelgani uchun bu yerda ham majburiy): Lumen async page-fault'ni to'xtatadi
-CVars=r.Lumen.DiffuseIndirect.AsyncCompute=0
+CVars=r.Streaming.PoolSize=12288
 CVars=r.ReflectionCaptureResolution=2048
 CVars=r.RayTracing=True
+; --- 2026-07-03: DefaultEngine.ini bilan mos ravishda RT soya/skylight QAYTA YOQILDI (bu profil runtime'da ustun keladi) ---
 CVars=r.RayTracing.Shadows=True
 CVars=r.RayTracing.Skylight=True
 CVars=r.AllowOcclusionQueries=True
-CVars=r.Nanite.AllowTessellation=True
+CVars=r.Nanite.AllowTessellation=0
 CVars=r.Nanite.Streaming.NumInitialRootPages=8192
-CVars=r.Nanite.MaxPixelsPerEdge=2
+CVars=r.Nanite.MaxPixelsPerEdge=1.0
 CVars=r.LumenReflections.SampleCount=128
 CVars=r.Lumen.TranslucencyReflections=1
 CVars=r.GenerateMeshDistanceFields=True
@@ -56,7 +55,7 @@ CVars=r.DefaultFeature.LightUnits=1
 CVars=r.ReflectionMethod=1
 CVars=r.DynamicGlobalIlluminationMethod=1
 CVars=r.RayTracing.GlobalIllumination=False
-CVars=r.RayTracing.Reflections=False
+CVars=r.RayTracing.Reflections=1
 CVars=r.LumenSceneLightingUpdateSpeed=1
 CVars=r.Fog=1
 CVars=r.FogDensity=0.02
@@ -66,7 +65,8 @@ CVars=r.VolumetricFog.HistoryWeight=0.9
 CVars=r.TranslucencyLightingVolumeDim=64
 CVars=r.SSS.Quality=1
 CVars=r.EyeAdaptationQuality=2
-CVars=r.Tonemapper.Sharpen=1.5
+; --- 2026-07-03: ANIMA look uchun DefaultEngine.ini bilan mos (2). Device profile runtime'da ustun keladi, shuning uchun bu yerda ham 2 bo'lishi shart ---
+CVars=r.Tonemapper.Sharpen=2
 CVars=r.Tonemapper.Quality=5
 CVars=r.TonemapperFilm=1
 CVars=r.MipMapLODBias=0
