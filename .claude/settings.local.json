@@ -7,7 +7,8 @@
       "mcp__unreal-mcp__describe_toolset",
       "mcp__unreal-mcp__list_toolsets",
       "WebFetch(domain:www.filmmakersacademy.com)",
-      "WebFetch(domain:irendering.net)"
+      "WebFetch(domain:irendering.net)",
+      "WebSearch"
     ]
   },
   "enabledMcpjsonServers": [
