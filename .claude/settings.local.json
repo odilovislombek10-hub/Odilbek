@@ -18,7 +18,9 @@
       "Bash(git -C \"D:/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/Odilbek\" config user.name)",
       "Bash(git -C \"D:/mirmironnnn oxirgiiii/Unreal Engine/Unreal Engine/Odilbek\" config user.email)",
       "Read(//e/MIR MIRON PACKAGE/Windows/**)",
-      "WebFetch(domain:forums.unrealengine.com)"
+      "WebFetch(domain:forums.unrealengine.com)",
+      "Bash(git log *)",
+      "Bash(grep -iE \"report|log|\\\\.md$|changelog|session|audit|weather|light\")"
     ]
   },
   "enabledMcpjsonServers": [
