@@ -25,4 +25,6 @@ metadata:
 
 **Fallback if crash recurs:** set `r.Lumen.HardwareRayTracing=0` (Software RT) — 100% removes RT page faults, slightly lower reflection quality. This is the "safe" tier the user was offered.
 
+**⚠️ REGRESSION 2026-07-03 (session 71ac68ba): user reported "same errors still appear, no change." Investigation found the real fix `r.Lumen.DiffuseIndirect.AsyncCompute=0` AND `r.GPUCrashDebugging=1` were BOTH MISSING from DefaultEngine.ini + DefaultDeviceProfiles.ini — they got wiped when the [[unreal_emmm_config_adoption]] E:\mmirmmmmm config was copied over (the "re-patched 3 fixes" note in that memory did NOT actually persist for these two). Re-added both to BOTH files. Also confirmed texture pool is now 9216 (9GB), not the 12288 memory elsewhere claims — 9216 is the deliberate DeviceProfiles-matched value, leave it. NEEDS EDITOR RESTART (full UnrealEditor.exe close+reopen) — .ini only loads at startup; this is the #1 reason "fixes don't take effect."**
+
 Needs **Editor restart** to take effect. Do NOT random-flip r.RayTracing.Shadows/Skylight for this — Aftermath proved it's HWRT async, see [[unreal_scalability_duplicate_section_and_rt_flipflop]] and [[unreal_rt_geometry_budget_fix]] and [[unreal_play_error_rt_streaming_fix]].
