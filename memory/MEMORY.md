@@ -1,3 +1,4 @@
+- [Packaging workflow](unreal_packaging_workflow.md) — how to package to E:\MIR MIRON PACKAGE (28GB, DONE 2026-07-03); the 2 gotchas: long-path→junction D:\O, MCP port-8000 conflict→close editor or -skipcook; exact RunUAT command
 - [Project overview](unreal_project_overview.md) — Odilbek UE ArchViz project: engine/plugins, full Content folder map & sizes
 - [Project levels](unreal_project_levels.md) — exact .umap paths for Glavniy_MirMIron/Pragulka/VR + full level inventory, BuiltData/baked-lighting status
 - [ArchVizExplorer structure](unreal_archvizexplorer_structure.md) — the core blueprint/widget framework (BP_Explorer_*, BP_*_Widget, materials, meshes)

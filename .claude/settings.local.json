@@ -11,7 +11,9 @@
       "WebSearch",
       "Bash(grep -iE \"chat|session|conversation|claude|\\\\.md$|log\")",
       "Bash(cd \"C:/Users/WINDOW~1/AppData/Local/Temp/claude/D--mirmironnnn-oxirgiiii-Unreal-Engine-Unreal-Engine-Odilbek/f8f27f6f-9f70-41ca-9590-1da25c2ca728/scratchpad\")",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Read(//c/Program Files/Epic Games/UE_5.8/Engine/Build/BatchFiles/**)",
+      "Read(//c/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/**)"
     ]
   },
   "enabledMcpjsonServers": [
