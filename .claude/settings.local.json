@@ -21,7 +21,8 @@
       "WebFetch(domain:forums.unrealengine.com)",
       "Bash(git log *)",
       "Bash(grep -iE \"report|log|\\\\.md$|changelog|session|audit|weather|light\")",
-      "Bash(tasklist)"
+      "Bash(tasklist)",
+      "PowerShell(Get-Process *)"
     ]
   },
   "enabledMcpjsonServers": [
