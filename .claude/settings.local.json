@@ -20,7 +20,8 @@
       "Read(//e/MIR MIRON PACKAGE/Windows/**)",
       "WebFetch(domain:forums.unrealengine.com)",
       "Bash(git log *)",
-      "Bash(grep -iE \"report|log|\\\\.md$|changelog|session|audit|weather|light\")"
+      "Bash(grep -iE \"report|log|\\\\.md$|changelog|session|audit|weather|light\")",
+      "Bash(tasklist)"
     ]
   },
   "enabledMcpjsonServers": [
